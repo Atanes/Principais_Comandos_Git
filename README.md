@@ -13,7 +13,34 @@ Antes de começar é importante que você tenha o Git, o Git Bash (faz parte da 
 [VSCode](https://code.visualstudio.com/docs)
 
 ### Comandos
-**Git clone**  
+**git config**
+ - Quando utilizamos o Git pela primeira vez ou em uma instalação nova, em um projeto colaborativo (onde estamos trabalhando com outras pessoas), esse comando é fundamental para configurar sua identidade de usuário, inserindo informações como nome e email que serão empregadas em cada commit que você realizar.
+
+Exemplo:
+```
+$ git config –global user.name “seu-nome-de-usuario”
+
+$ git config –global user.email “seu-email@email.com”
+```
+
+**git init**
+ - Esse é o comando que utilizamos para criar um novo projeto em um repositório controlado pelo git. O comando irá criar um repositório novo em branco e, a partir daí, será possível armazenar seu código fonte, alterar, salvar e gerenciar todas as alterações feitas nesse repositório.
+ - Esse comando cria um novo subdiretório chamado .git que contém todos os arquivos necessários de seu repositório – um esqueleto de repositório Git.
+
+Exemplo:
+```
+$ git init
+```
+Se você já possui um repositório anterior ou deseja criar um repositório com um nome em específico, você pode passar o nome como parâmetro do comando:
+```
+$ git init <O nome do seu repositório>
+```
+<p align='center'>
+  <img src='https://user-images.githubusercontent.com/18126923/206562380-f49d7da4-b5d3-4ccb-9bca-f6bc5f129555.png'><br>
+  Criando um repositório local gerenciado pelo git
+</p>
+
+**git clone**  
  - Git clone é um comando que faz uma cópia (clone) de um repositório remoto para a sua máquina local ou outra máquina que você deseje, com ele você consegue baixar todo o código-fonte existente em um repositório remoto (como, por exemplo, o Github ou Bitbucket) para a sua máquina sem muitas dificuldades e o repositório local vai ficar exatamente com a mesma estrutura, código e histórico do repositório remoto. Em resumo, utilizamos o git clone, basicamente, para fazer uma cópia idêntica da versão mais recente de um projeto em um repositório remoto para outra máquina.
 
 Existem algumas maneiras difirentes de clonar o repsotório com esse comando, mas com certeza as mais utilizadas são via https ou SSH:
@@ -37,3 +64,12 @@ Por exemplo, se eu quiser baixar um projeto do Github, tudo que você precisa fa
 ### Observação importante 
 Os comandos apresentados aqui são só uma parte dos comandos do Git, mas com certeza são os mais importantes e os que você mais vai usar no seu dia a dia como pessoa desenvolvedora, então não esqueça de particar bastante e sempre que precisar pode voltar aqui para relembrar os comandos e também para me ajudar a melhorar essa página e suas informações, ok. 😊
 Suas criticas, observações e ou comentários são sempre bem vindos! 👊
+## Comandos adicionais
+Caso queria ver os demais comandos e ou precisar de um **help** com algum comando você pode usar o git help sem medo, ok! 😉
+```
+git help
+```
+<p align='center'>
+  <img src='https://user-images.githubusercontent.com/18126923/206564169-38b8d270-eec1-4169-ba8d-566766dc876c.png'><br>
+  Lista de comandos do git com ajuda do git help
+</p>
