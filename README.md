@@ -61,10 +61,29 @@ Por exemplo, se eu quiser baixar um projeto do Github, tudo que você precisa fa
   Esse comando vai criar uma cópia do projeto na sua máquina de trabalho local onde você vai poder trabalhar sem problemas.
 </p>
 
+**git add**  
+ - Quando você inicia um repositório via git clone ou git init, todos os seus arquivos passam a ser monitorados e controlados pelo Git. Conforme você edita esses arquivos e ou inclui novos arquivos no seu projeto, o Git passa a vê-los como modificados, porque você fez alguma alteração/inclusão desde seu último commit. Para registrar essas alterações e fazer um commit com as informações das alterações antes você precisa usar o git add para "incluir" os arquivos novos/alterados na area de "stage" do git antes de "registrar" as mudanças com o git commit que vamos ver em seguida.
+
+Para incluir um arquivo especifico é preciso determinar o nome do arquivo novo/modificado depois do git add:
+```
+git add index.html
+```
+Para incluir todos os novos arquivos e ou arquivos modificados de uma unica vez você pode usar o "." depois do git add:
+```
+git add .
+```
+
+### O ciclo de vida dos status dos arquivos no Git
+<p align='center'>
+  <img src='https://git-scm.com/book/en/v2/images/lifecycle.png'><br>
+</p>
+
+Referência: [GIT-SCM](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Gravando-Altera%C3%A7%C3%B5es-em-Seu-Reposit%C3%B3rio)
+
 ### Observação importante 
 Os comandos apresentados aqui são só uma parte dos comandos do Git, mas com certeza são os mais importantes e os que você mais vai usar no seu dia a dia como pessoa desenvolvedora, então não esqueça de particar bastante e sempre que precisar pode voltar aqui para relembrar os comandos e também para me ajudar a melhorar essa página e suas informações, ok. 😊
 Suas criticas, observações e ou comentários são sempre bem vindos! 👊
-## Comandos adicionais
+### Comandos adicionais
 Caso queria ver os demais comandos e ou precisar de um **help** com algum comando você pode usar o git help sem medo, ok! 😉
 ```
 git help
