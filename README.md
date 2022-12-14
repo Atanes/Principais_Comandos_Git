@@ -61,6 +61,24 @@ Por exemplo, se eu quiser baixar um projeto do Github, tudo que você precisa fa
   Esse comando vai criar uma cópia do projeto na sua máquina de trabalho local onde você vai poder trabalhar sem problemas.
 </p>
 
+**git branch**  
+ - Durante o desenvovlimento de um sistema é comum, na maior parte do tempo, trabalharmos em múltiplos "workspaces" dentro do nosso repositório Git, chamamos esses "workspaces" de branches (“ramificações”). De forma geral um branch é uma aréa independente de desenvolvimentodentro do seu sistema/projeto.
+
+Em um primeiro momento pode parecer entender esses vários "workspaces" e se perder com o controle deles, mas o comando git branch facilita esse gerenciamento e simplifica muito nosso controle sobre essas "ramificações de trabalho". Com diferentes parâmetros, é possível listar, criar, renomear e ou apagar os branches do seu sistema/projeto.
+
+Para listar todas as branchs existentes é só usar o git branch:
+```
+git branch
+```
+Para incluir uma nova branch é só usar o git branch + o nome da branch:
+```
+git branch nova-branch
+```
+Para renomear uma branch existente utilizamos o parametro -m no comando git branch:
+```
+git branch -m nome-antigo novo-nome
+```
+ 
 **git add**  
  - Quando você inicia um repositório via git clone ou git init, todos os seus arquivos passam a ser monitorados e controlados pelo Git. Conforme você edita esses arquivos e ou inclui novos arquivos no seu projeto, o Git passa a vê-los como modificados, porque você fez alguma alteração/inclusão desde seu último commit. Para registrar essas alterações e fazer um commit com as informações das alterações antes você precisa usar o git add para "incluir" os arquivos novos/alterados na area de "stage" do git antes de "registrar" as mudanças com o git commit que vamos ver em seguida.
 
