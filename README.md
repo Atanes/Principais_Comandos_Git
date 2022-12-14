@@ -74,11 +74,32 @@ Para incluir uma nova branch é só usar o git branch + o nome da branch:
 ```
 git branch nova-branch
 ```
+Para remover uma branch utilizamos o parametro -d depois do git branch:
+```
+git branch -d nome-da-branch
+```
 Para renomear uma branch existente utilizamos o parametro -m no comando git branch:
 ```
 git branch -m nome-antigo novo-nome
 ```
- 
+
+**git checkout**  
+ - Esse com certeza é um dos comandos mais utilizados no Git, pois para trabalhar em uma branch, primeiro, é preciso estar "dentro" dela. Usamos git checkout, na maioria dos casos, para trocar de uma branch para outra, esse comando também pode ser usado para fazer o checkout de arquivos e commits que vamos ver mais adiante.
+
+Para "entrar" uma branch:
+```
+git checkout nome-da-branch
+```
+O comando git checkout também nos permite criar e automaticamente trocar para a branch criada ao mesmo tempo:
+```
+git checkout -b nome-da-branch
+```
+Esse comando cria a branch em seu workspace local (a flag -b representa a branch) e faz o checkout para a nova branch logo após sua criação.
+
+Uma observação importante é que existem alguns passos que precisam ser seguidos para trocar de branch sem problemas:
+  1. As alterações em sua branch atual devem estar em um commit ou em um stash antes de você fazer a troca
+  2. A branch na qual você quer fazer o checkout deve existir no seu espaço de trabalho local
+
 **git add**  
  - Quando você inicia um repositório via git clone ou git init, todos os seus arquivos passam a ser monitorados e controlados pelo Git. Conforme você edita esses arquivos e ou inclui novos arquivos no seu projeto, o Git passa a vê-los como modificados, porque você fez alguma alteração/inclusão desde seu último commit. Para registrar essas alterações e fazer um commit com as informações das alterações antes você precisa usar o git add para "incluir" os arquivos novos/alterados na area de "stage" do git antes de "registrar" as mudanças com o git commit que vamos ver em seguida.
 
