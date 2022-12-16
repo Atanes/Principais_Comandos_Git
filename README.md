@@ -82,6 +82,10 @@ Para renomear uma branch existente utilizamos o parametro -m no comando git bran
 ```
 git branch -m nome-antigo novo-nome
 ```
+<p align='center'>
+  <img src='https://user-images.githubusercontent.com/18126923/208152092-7a8e9d5f-229b-4562-9fbf-fd9b5ae87d5c.png'><br>
+  Utilização do git branch
+</p>
 
 **git checkout**  
  - Esse com certeza é um dos comandos mais utilizados no Git, pois para trabalhar em uma branch, primeiro, é preciso estar "dentro" dela. Usamos git checkout, na maioria dos casos, para trocar de uma branch para outra, esse comando também pode ser usado para fazer o checkout de arquivos e commits que vamos ver mais adiante.
@@ -94,7 +98,7 @@ O comando git checkout também nos permite criar e automaticamente trocar para a
 ```
 git checkout -b nome-da-branch
 ```
-Esse comando cria a branch em seu workspace local (a flag -b representa a branch) e faz o checkout para a nova branch logo após sua criação.
+Esse comando cria a branch nova no seu workspace local, a flag -b indica para o git que é uma nova branch, e faz o checkout para a nova branch logo após sua criação.
 
 Uma observação importante é que existem alguns passos que precisam ser seguidos para trocar de branch sem problemas:
   1. As alterações em sua branch atual devem estar em um commit ou em um stash antes de você fazer a troca
@@ -112,6 +116,38 @@ Para incluir todos os novos arquivos e ou arquivos modificados de uma unica vez 
 git add .
 ```
 
+**git status**
+ - O comando git status te mostra todas as informações necessárias sobre quais arquivos estão em quais estados na branch atual.
+ Com esse comando é possivel verificar se algum arquivo foi alterado, se está na area de stage pronto para receber um commit entre outras coisas.
+```
+git status
+```
+<p align='center'>
+  <img src='https://user-images.githubusercontent.com/18126923/208154067-bfe921f2-add8-412f-a6b3-5567ac089324.png'><br>
+  Exemplos de informações geradas pelo comando do git status
+</p>
+
+**git commit**
+ - Com certeza esse é um dos comandos mais utilizado no Git. Depois de algumas modificações, inclusão de novos arquivos, quando chegamos a determinado ponto do nosso desenvolvimento onde queremos manter um histórico e criar um "ponto de controle", podemos definir uma "marca" de verificação com o git commit. Com essa "marca" é possivel voltar até esse ponto mais tarde se for necessário.
+O git commit salva efetivamente as modificações no seu workspace e coloca uma "marca", um tag de controle naquele ponto do desenvolvimento que pode ser consultado, comparado com outros pontos de alteração e ou utilizado para fazer um rollback do código em caso de problemas mais sérios.
+Observação: É necessário inserir uma mensagem breve para explicar/indentificar o que desenvolvemos ou alteramos no código-fonte naquele momento.
+```
+git commit -m "inclusão de novos arquivos de controle"
+```
+Nesse ponto também é importante entender as diferenças entre o git add e o git commit:
+
+git add é utilizado para adicionar os modificações realizadas à area de stage (fila de controle) do git para serem submetidos a um commit posteriormente. Os arquivos que ainda não passaram por um commit.
+O git commit salva efetivamente as alterações e cria uma nova revisão com um log para esse conjunto de alterações que foram adicionadas na area de stage pelo git add.
+Você pode combinar os dois comandos (git add e git commit) utilizando o parametro -a no comando commit:
+```
+git commit -a -m "inclusão de novos arquivos de controle"
+```
+Dessa forma o git adiciona todas modificações pendentes a area de stage e logo em seguida efetiva o commit sobre essas alterações.
+<p align='center'>
+  <img src='https://user-images.githubusercontent.com/18126923/208159181-3d93b10b-15b1-432f-80fe-e87753154b8e.png'><br>
+  Utilização do git commit
+</p>
+ 
 ### O ciclo de vida dos status dos arquivos no Git
 <p align='center'>
   <img src='https://git-scm.com/book/en/v2/images/lifecycle.png'><br>
