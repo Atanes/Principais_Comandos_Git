@@ -147,7 +147,47 @@ Dessa forma o git adiciona todas modificações pendentes a area de stage e logo
   <img src='https://user-images.githubusercontent.com/18126923/208159181-3d93b10b-15b1-432f-80fe-e87753154b8e.png'><br>
   Utilização do git commit
 </p>
- 
+
+**git push**
+ - Após confirmar as alterações com o git commit que você fez na sua máquina local é necessário fazer o envio das alterações para o seu servidor remoto para deixa-lo atualizado em relação as essas alterações e para isso usamos o comando git push:
+```
+git push <remote> <nome-do-branch>
+git push origin novas-features
+```
+Obs: Caso sua branch tenha sido criada localmente, você também precisará fazer upload da branch utilizando a parametro **-u** junto com git push:
+```
+git push -u origin <nome-do-branch>
+```
+
+**git pull**
+ - O git pull faz o caminho inverso do git push, ou seja, é utilizado para se obter atualizações do repositório remoto. 
+
+Este comando é uma combinação de git fetch (baixa as alterações do repositório remoto, mas não faz o merge com o seu repositório local) e git merge (que faz o merge efetivo dos repositórios para uma branch especifica).
+
+Isso significa que, quando usamos o git pull, ele recebe as atualizações do repositório remoto (git fetch) e aplica imediatamente as alterações mais recentes no seu repositório local (git merge).
+Para baixar todas as atualizações existentes no repositório remoto:
+```
+git pull <remote>
+```
+Para baixar todas as atualizações existentes no repositório remoto em uma branch especifica:
+```
+git pull <remote> <nome-da-branch>
+```
+<p align='center'>
+  <img src='https://user-images.githubusercontent.com/18126923/211423254-dcdebb52-ca6c-4555-b1dc-8ad03815bbe8.png'><br>
+</p>
+
+**git merge**
+ - Após concluir o desenvolvimento em sua branch e fazer os testes necessários para verificar se tudo está funcionando bem, a próxima etapa é mesclar as suas alterações com a branch principal do projeto (por exemplo), isso é feito através do comando git merge.
+Esse comando integra as mudanças de duas branches diferentes em uma única branch. Ele precisa ser executado a partir de um branch especifica, que será mesclada com outra que é passada por parâmetro no comando.
+```
+git merge <nome-da-branch>
+```
+No exemplo abaixo a branch **resolucao-atanes** vai receber todas as alterações e atualizações existentes na branch main:
+<p align='center'>
+  <img src='https://user-images.githubusercontent.com/18126923/211422747-43c7ecee-96fa-4f91-b206-6b6559abee1d.png'><br>
+</p>
+
 ### O ciclo de vida dos status dos arquivos no Git
 <p align='center'>
   <img src='https://git-scm.com/book/en/v2/images/lifecycle.png'><br>
