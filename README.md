@@ -43,7 +43,7 @@ $ git init <O nome do seu repositório>
 **git clone**  
  - Git clone é um comando que faz uma cópia (clone) de um repositório remoto para a sua máquina local ou outra máquina que você deseje, com ele você consegue baixar todo o código-fonte existente em um repositório remoto (como, por exemplo, o Github ou Bitbucket) para a sua máquina sem muitas dificuldades e o repositório local vai ficar exatamente com a mesma estrutura, código e histórico do repositório remoto. Em resumo, utilizamos o git clone, basicamente, para fazer uma cópia idêntica da versão mais recente de um projeto em um repositório remoto para outra máquina.
 
-Existem algumas maneiras difirentes de clonar o repsotório com esse comando, mas com certeza as mais utilizadas são via https ou SSH:
+Existem algumas maneiras diferentes de clonar o repsotório com esse comando, mas com certeza as mais utilizadas são via https ou SSH:
 ```
 git clone https://github.com/Atanes/controle-estoque.git
 ```
@@ -51,7 +51,7 @@ git clone https://github.com/Atanes/controle-estoque.git
 git clone git@github.com:Atanes/controle-estoque.git
 ```
 
-Por exemplo, se eu quiser baixar um projeto do Github, tudo que você precisa fazer é clicar no botão Code ou Código, selecionar como quer fazer o clone, via HTTPS, SSH ou via Git CLI, copiar o URL da caixa logo abaixo e colá-lo após o comando git clone no seu terminal.
+Por exemplo, se você quiser baixar um projeto do Github, tudo que precisa fazer é clicar no botão Code ou Código, selecionar como quer fazer o clone, via HTTPS, SSH ou via Git CLI, copiar o URL da caixa que aparece logo abaixo e colá-lo após o comando git clone no seu terminal.
 <p align='center'>
   <img src='https://user-images.githubusercontent.com/18126923/206558597-3ea60c0a-8810-4dd3-bbf8-b2b57a39bcb4.png'><br>
   Exemplo com o código-fonte de um projeto no Github
@@ -62,9 +62,9 @@ Por exemplo, se eu quiser baixar um projeto do Github, tudo que você precisa fa
 </p>
 
 **git branch**  
- - Durante o desenvovlimento de um sistema é comum, na maior parte do tempo, trabalharmos em múltiplos "workspaces" dentro do nosso repositório Git, chamamos esses "workspaces" de branches (“ramificações”). De forma geral um branch é uma aréa independente de desenvolvimentodentro do seu sistema/projeto.
+ - Durante o desenvovlimento de um sistema é comum, na maior parte do tempo, trabalharmos em múltiplos "workspaces" dentro do nosso repositório Git, chamamos esses "workspaces" de branches (“ramificações”). De forma geral uma branch é uma área independente de desenvolvimento dentro do seu sistema/projeto.
 
-Em um primeiro momento pode parecer entender esses vários "workspaces" e se perder com o controle deles, mas o comando git branch facilita esse gerenciamento e simplifica muito nosso controle sobre essas "ramificações de trabalho". Com diferentes parâmetros, é possível listar, criar, renomear e ou apagar os branches do seu sistema/projeto.
+Em um primeiro momento pode parecer complicado entender esses vários "workspaces" e se perder com o controle deles, mas o comando git branch facilita esse gerenciamento e simplifica muito nosso controle sobre essas "ramificações de trabalho". Com diferentes parâmetros, é possível listar, criar, renomear e ou apagar as branches do seu sistema/projeto.
 
 Para listar todas as branchs existentes é só usar o git branch:
 ```
@@ -74,11 +74,11 @@ Para incluir uma nova branch é só usar o git branch + o nome da branch:
 ```
 git branch nova-branch
 ```
-Para remover uma branch utilizamos o parametro -d depois do git branch:
+Para remover uma branch utilizamos o parametro **-d** depois do git branch:
 ```
 git branch -d nome-da-branch
 ```
-Para renomear uma branch existente utilizamos o parametro -m no comando git branch:
+Para renomear uma branch existente utilizamos o parametro **-m** no comando git branch:
 ```
 git branch -m nome-antigo novo-nome
 ```
@@ -90,22 +90,22 @@ git branch -m nome-antigo novo-nome
 **git checkout**  
  - Esse com certeza é um dos comandos mais utilizados no Git, pois para trabalhar em uma branch, primeiro, é preciso estar "dentro" dela. Usamos git checkout, na maioria dos casos, para trocar de uma branch para outra, esse comando também pode ser usado para fazer o checkout de arquivos e commits que vamos ver mais adiante.
 
-Para "entrar" uma branch:
+Para "entrar" em uma branch:
 ```
 git checkout nome-da-branch
 ```
-O comando git checkout também nos permite criar e automaticamente trocar para a branch criada ao mesmo tempo:
+O comando git checkout também nos permite criar e entrar automaticamente em uma branch durante sua execução:
 ```
 git checkout -b nome-da-branch
 ```
-Esse comando cria a branch nova no seu workspace local, a flag -b indica para o git que é uma nova branch, e faz o checkout para a nova branch logo após sua criação.
+Esse comando cria a branch nova no seu workspace local, a flag **-b** indica para o git que é uma nova branch e faz o checkout para essa nova branch logo após sua criação.
 
 Uma observação importante é que existem alguns passos que precisam ser seguidos para trocar de branch sem problemas:
-  1. As alterações em sua branch atual devem estar em um commit ou em um stash antes de você fazer a troca
+  1. As alterações em sua branch atual devem estar em um commit ou em um stage antes de você fazer a troca
   2. A branch na qual você quer fazer o checkout deve existir no seu espaço de trabalho local
 
 **git add**  
- - Quando você inicia um repositório via git clone ou git init, todos os seus arquivos passam a ser monitorados e controlados pelo Git. Conforme você edita esses arquivos e ou inclui novos arquivos no seu projeto, o Git passa a vê-los como modificados, porque você fez alguma alteração/inclusão desde seu último commit. Para registrar essas alterações e fazer um commit com as informações das alterações antes você precisa usar o git add para "incluir" os arquivos novos/alterados na area de "stage" do git antes de "registrar" as mudanças com o git commit que vamos ver em seguida.
+ - Quando você inicia um repositório via git clone ou git init, todos os seus arquivos passam a ser monitorados e controlados pelo Git. Conforme você edita esses arquivos e ou inclui novos arquivos no seu projeto, o Git passa a vê-los como modificados, porque você fez alguma alteração/inclusão desde seu último commit. Para registrar essas alterações e fazer um commit com as informações das alterações, antes, você precisa usar o git add para "incluir" os arquivos novos/alterados na area de "stage" do git.
 
 Para incluir um arquivo especifico é preciso determinar o nome do arquivo novo/modificado depois do git add:
 ```
@@ -136,13 +136,13 @@ git commit -m "inclusão de novos arquivos de controle"
 ```
 Nesse ponto também é importante entender as diferenças entre o git add e o git commit:
 
-git add é utilizado para adicionar os modificações realizadas à area de stage (fila de controle) do git para serem submetidos a um commit posteriormente. Os arquivos que ainda não passaram por um commit.
+git add é utilizado para adicionar os modificações realizadas à area de stage (fila de controle) do Git para serem submetidos a um commit posteriormente. Os arquivos que ainda não passaram por um commit.
 O git commit salva efetivamente as alterações e cria uma nova revisão com um log para esse conjunto de alterações que foram adicionadas na area de stage pelo git add.
 Você pode combinar os dois comandos (git add e git commit) utilizando o parametro -a no comando commit:
 ```
 git commit -a -m "inclusão de novos arquivos de controle"
 ```
-Dessa forma o git adiciona todas modificações pendentes a area de stage e logo em seguida efetiva o commit sobre essas alterações.
+Dessa forma o git adiciona todas modificações pendentes a área de stage e logo em seguida efetiva o commit sobre essas alterações.
 <p align='center'>
   <img src='https://user-images.githubusercontent.com/18126923/208159181-3d93b10b-15b1-432f-80fe-e87753154b8e.png'><br>
   Utilização do git commit
@@ -196,7 +196,7 @@ No exemplo abaixo a branch **resolucao-atanes** vai receber todas as alteraçõe
 Referência: [GIT-SCM](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Gravando-Altera%C3%A7%C3%B5es-em-Seu-Reposit%C3%B3rio)
 
 ### Observação importante 
-Os comandos apresentados aqui são só uma parte dos comandos do Git, mas com certeza são os mais importantes e os que você mais vai usar no seu dia a dia como pessoa desenvolvedora, então não esqueça de particar bastante e sempre que precisar pode voltar aqui para relembrar os comandos e também para me ajudar a melhorar essa página e suas informações, ok. 😊
+Os comandos apresentados aqui são só uma parte dos comandos do Git, mas com certeza são os mais importantes e os que você mais vai usar no seu dia a dia como pessoa desenvolvedora, então não esqueça de praticar bastante e sempre que precisar pode voltar aqui para relembrar os comandos e também para me ajudar a melhorar essa página e suas informações, ok. 😊
 Suas criticas, observações e ou comentários são sempre bem vindos! 👊
 ### Comandos adicionais
 Caso queria ver os demais comandos e ou precisar de um **help** com algum comando você pode usar o git help sem medo, ok! 😉
