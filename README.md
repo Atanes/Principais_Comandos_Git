@@ -12,6 +12,9 @@ Antes de começar é importante que você tenha o Git, o Git Bash (faz parte da 
 [Git / Git Bash](https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git)  
 [VSCode](https://code.visualstudio.com/docs)
 
+### Video
+Nesse [link](https://youtu.be/OOA-jSTTAF4) você vai encontrar um video onde mostro a utilização prática da maioria dos comandos listados abaixo.🚀 
+
 ### Comandos
 **git config**
  - Quando utilizamos o Git pela primeira vez ou em uma instalação nova, em um projeto colaborativo (onde estamos trabalhando com outras pessoas), esse comando é fundamental para configurar sua identidade de usuário, inserindo informações como nome e email que serão empregadas em cada commit que você realizar.
